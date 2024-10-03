@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Goal 1
   - Goal 2
+  - coin
+  - kill
   layers:
   - Default
   - TransparentFX

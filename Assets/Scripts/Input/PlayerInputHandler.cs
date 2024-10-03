@@ -26,6 +26,12 @@ public class PlayerInputHandler : MonoBehaviour
         else
             playerCamera = input.camera;
         devices = input.devices.Select(x => x.name).ToArray();
+
+        // Hide the cursor and lock it
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
+     
     }
 
     public InputDevice GetMainInput() => input.devices.Count <= 0 ? null : input.devices[0];

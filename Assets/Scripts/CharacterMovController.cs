@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 using static UEventHandler;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -292,6 +294,12 @@ public class CharacterMovController : MonoBehaviour
 
         groundColliders.Add(collision.collider);
 
+        if (collision.gameObject.tag == "coin")
+        {
+            Destroy(collision.gameObject);
+        }
+      
+
     }
 
     private void OnCollisionExit(Collision collision)
@@ -301,6 +309,16 @@ public class CharacterMovController : MonoBehaviour
 
         groundColliders.Remove(collision.collider);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "kill")
+        {
+            rb.transform.position = new Vector3(0, 0, 0);
+        }
+    }
+
+
 
     private Vector3 GetAverageContactPos(Collision collision)
     {

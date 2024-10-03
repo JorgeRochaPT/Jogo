@@ -40,6 +40,12 @@ public class FollowSimple : MonoBehaviour
         TimeCalc();
         FollowPosition();
         FollowRotation();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            // Close the game
+            Application.Quit();
+        }
     }
 
 
@@ -49,6 +55,11 @@ public class FollowSimple : MonoBehaviour
         TimeCalc();
         FollowPosition();
         FollowRotation();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            // Close the game
+            Application.Quit();
+        }
 
     }
 
@@ -58,6 +69,11 @@ public class FollowSimple : MonoBehaviour
         TimeCalc();
         FollowPosition();
         FollowRotation();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            // Close the game
+            Application.Quit();
+        }
     }
 
     public void SetFollowOffset(Vector3 newOffset)
