@@ -282,6 +282,11 @@ public class CharacterMovController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+
+        if (collision.gameObject.tag == "coin")
+        {
+            Destroy(collision.gameObject);
+        }
         if (collision.contactCount <= 0) return;
 
         //If collided with an already in-contact collider - ignore and return
@@ -294,10 +299,7 @@ public class CharacterMovController : MonoBehaviour
 
         groundColliders.Add(collision.collider);
 
-        if (collision.gameObject.tag == "coin")
-        {
-            Destroy(collision.gameObject);
-        }
+       
       
 
     }
